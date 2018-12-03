@@ -1,0 +1,118 @@
+--- !com.amazonaws.mobilehub.v0.Project 
+apps:
+  web: !com.amazonaws.mobilehub.v0.AppDO {}
+features:
+  cloudlogic: !com.amazonaws.mobilehub.v0.CloudLogic 
+    components:
+      Meal_OptionCRUD: !com.amazonaws.mobilehub.v0.API 
+        attributes:
+          name: Meal_OptionCRUD
+          requires-signin: false
+          sdk-generation-stage-name: Development
+        paths:
+          /Meal_Option: !com.amazonaws.mobilehub.v0.Function 
+            codeFilename: uploads/MealOption-20181202182402.zip
+            description: 'Handler for calls to resource path : /Meal_Option/{proxy+}'
+            enableCORS: true
+            environment: {}
+            handler: lambda.handler
+            hashcode: AIKPPSNW9UmHtclQBuhCBhl1Zohaqy/YvvKyjetlm1I=
+            memorySize: '128'
+            modified: '2018-12-03T02:25:14.882+0000'
+            name: MealOption
+            runtime: nodejs6.10
+            timeout: '3'
+            version: _33rdBvN2fvG5Zq2LSoVG1iyz9DjUAJh
+          '/Meal_Option/{proxy+}': !com.amazonaws.mobilehub.v0.Function 
+            codeFilename: uploads/MealOption-20181202182402.zip
+            description: 'Handler for calls to resource path : /Meal_Option/{proxy+}'
+            enableCORS: true
+            environment: {}
+            handler: lambda.handler
+            hashcode: AIKPPSNW9UmHtclQBuhCBhl1Zohaqy/YvvKyjetlm1I=
+            memorySize: '128'
+            modified: '2018-12-03T02:25:14.882+0000'
+            name: MealOption
+            runtime: nodejs6.10
+            timeout: '3'
+            version: UW5RzwB9dqeFwmTIiuSw_e1Y58htk7ej
+      Volunteer_LogsCRUD: !com.amazonaws.mobilehub.v0.API 
+        attributes:
+          name: Volunteer_LogsCRUD
+          requires-signin: false
+          sdk-generation-stage-name: Development
+        paths:
+          /Volunteer_Logs: !com.amazonaws.mobilehub.v0.Function 
+            codeFilename: uploads/VolunteerLogs-20181202182402.zip
+            description: 'Handler for calls to resource path : /Volunteer_Logs/{proxy+}'
+            enableCORS: true
+            environment: {}
+            handler: lambda.handler
+            hashcode: LovsyqJzClV8x4dO9r+U9IDHM+bCVyH6Mwh1lvlq5Ww=
+            memorySize: '128'
+            modified: '2018-12-03T02:25:14.541+0000'
+            name: VolunteerLogs
+            runtime: nodejs6.10
+            timeout: '3'
+            version: iqrAP.j7zaqsQLziSmFFtc6nbQ8g0qMA
+          '/Volunteer_Logs/{proxy+}': !com.amazonaws.mobilehub.v0.Function 
+            codeFilename: uploads/VolunteerLogs-20181202182402.zip
+            description: 'Handler for calls to resource path : /Volunteer_Logs/{proxy+}'
+            enableCORS: true
+            environment: {}
+            handler: lambda.handler
+            hashcode: LovsyqJzClV8x4dO9r+U9IDHM+bCVyH6Mwh1lvlq5Ww=
+            memorySize: '128'
+            modified: '2018-12-03T02:25:14.541+0000'
+            name: VolunteerLogs
+            runtime: nodejs6.10
+            timeout: '3'
+            version: ZVuA8z_T9CfMuzag8TuNKE2WAxh4d8EZ
+  content-delivery: !com.amazonaws.mobilehub.v0.ContentDelivery 
+    attributes:
+      enabled: true
+      visibility: public-global
+    components:
+      release: !com.amazonaws.mobilehub.v0.Bucket {}
+  database: !com.amazonaws.mobilehub.v0.Database 
+    components:
+      database-nosql: !com.amazonaws.mobilehub.v0.NoSQLDatabase 
+        tables:
+          - !com.amazonaws.mobilehub.v0.NoSQLTable 
+            attributes:
+              cost: N
+              date: S
+              endTime: S
+              location: S
+              meal: S
+              name: S
+              startTime: S
+            hashKeyName: name
+            hashKeyType: S
+            rangeKeyName: date
+            rangeKeyType: S
+            tableName: ___DYNAMIC_PREFIX___-Volunteer_Logs
+            tablePrivacy: public
+          - !com.amazonaws.mobilehub.v0.NoSQLTable 
+            attributes:
+              Name: S
+              Price: N
+            hashKeyName: Name
+            hashKeyType: S
+            rangeKeyName: ''
+            rangeKeyType: ''
+            tableName: ___DYNAMIC_PREFIX___-Meal_Option
+            tablePrivacy: public
+  mobile-analytics: !com.amazonaws.mobilehub.v0.Pinpoint 
+    components:
+      analytics: !com.amazonaws.mobilehub.v0.PinpointAnalytics {}
+  sign-in: !com.amazonaws.mobilehub.v0.SignIn 
+    attributes:
+      enabled: true
+      optional-sign-in: true
+    components:
+      sign-in-user-pools: !com.amazonaws.mobilehub.v0.UserPoolsIdentityProvider 
+        attributes:
+          user-pool-id: us-west-2_TLPqmyiUH
+name: Sprouts
+region: us-west-2
